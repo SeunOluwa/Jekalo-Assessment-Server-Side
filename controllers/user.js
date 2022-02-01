@@ -31,7 +31,7 @@ export const getUsers = async (req, res) => {
 export const deleteUser = async (req, res) => {
     const { username } = req.params;
 
-    await User.findOneAndRemove(username);
+    await User.findOneAndRemove({ username });
 
     res.json({ message: 'You deleted the user successfully' });
 }
