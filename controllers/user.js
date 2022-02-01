@@ -4,7 +4,13 @@ export const createUser = async (req, res) => {
     const { first_name, last_name, username, date_of_birth } = req.body;
 
     try {
-        const user = await User.create({ first_name, last_name, username, date_of_birth });
+        const user = await User.create({ 
+            name_prefix: `${first_name[0]}${last_name[0]}`, 
+            first_name, 
+            last_name, 
+            username, 
+            date_of_birth 
+        });
 
         res.status(200).json(user);
     } catch (error) {
