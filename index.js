@@ -18,7 +18,7 @@ app.use(cors());
 app.use('/api', userRoutes);
 
 app.get('/', (req, res) => {
-  res.send('APP IS RUNNING.');
+  res.send('APP IS WORKING.');
 })
 
 const CONNECTION_URL = 'mongodb+srv://SeunOluwa:SeunOluwa0459@cluster0.vikny.mongodb.net/jekalo-assessment?retryWrites=true&w=majority';
