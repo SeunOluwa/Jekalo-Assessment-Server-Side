@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 })
 
 const CONNECTION_URL = 'mongodb+srv://SeunOluwa:SeunOluwa0459@cluster0.vikny.mongodb.net/jekalo-assessment?retryWrites=true&w=majority';
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Connect to mongodb
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
