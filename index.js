@@ -17,9 +17,14 @@ app.use(cors());
 // Middlewares
 app.use('/api', userRoutes);
 
-const PORT = process.env.PORT || 5000;
+app.get('/', (req, res) => {
+  res.send('APP IS RUNNING.');
+})
+
+const CONNECTION_URL = 'mongodb+srv://SeunOluwa:SeunOluwa0459@cluster0.vikny.mongodb.net/jekalo-assessment?retryWrites=true&w=majority';
+const PORT = 5000;
 
 // Connect to mongodb
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
   .catch((error) => console.log(error.message));
